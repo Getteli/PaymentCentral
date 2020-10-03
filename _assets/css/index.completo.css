@@ -32,6 +32,10 @@ main {
 	height: 40px;
 }
 
+.none{
+	display: none;
+}
+
 .title_text{
 	font-family: 'Montserrat Semi-Bold', Arial, sans-serif;
 }

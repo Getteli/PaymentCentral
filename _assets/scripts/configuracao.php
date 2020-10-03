@@ -66,9 +66,7 @@ if(!empty($_GET["qq"])){
 	// close cUrl
 	curl_close($cUrl);
 
-	echo "resultado: ";
-	echo $result;
-	/*
+	
 	// result
 	if ($result != "error") {
 		// continua na página
@@ -84,5 +82,5 @@ if(!empty($_GET["qq"])){
 		$conteudo = "none";
 		$modal = "block";
 	}
-	*/
+	
 }
