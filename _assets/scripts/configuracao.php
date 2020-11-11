@@ -8,19 +8,19 @@ if ($sandbox) {
 
 	//Credenciais do SandBox
 
-	define("EMAIL_PAGSEGURO", "matheus.me.ngo@hotmail.com");
+    define("EMAIL_PAGSEGURO", "matheus.me.ngo@hotmail.com");
+    
+    define("TOKEN_PAGSEGURO", "E1F464F81D524DF88D07E00B37B7994F");
+    
+    define("URL_PAGSEGURO", "https://ws.sandbox.pagseguro.uol.com.br/v2/");
+    
+    define("SCRIPT_PAGSEGURO", "https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js");
+    
+    define("EMAIL_LOJA", "matheus.me.ngo@hotmail.com");
+    
+    define("MOEDA_PAGAMENTO", "BRL");
 
-	define("TOKEN_PAGSEGURO", "E1F464F81D524DF88D07E00B37B7994F");
-
-	define("URL_PAGSEGURO", "https://ws.sandbox.pagseguro.uol.com.br/v2/");
-
-	define("SCRIPT_PAGSEGURO", "https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js");
-
-	define("EMAIL_LOJA", "E-mail de suporte pós venda");
-
-	define("MOEDA_PAGAMENTO", "BRL");
-
-	define("URL_NOTIFICACAO", "https://sualoja.com.br/notifica.html");
+	define("URL_NOTIFICACAO", "https://payment.agenciapublikando.com.br/");
 
 } else {
 
@@ -42,7 +42,6 @@ if ($sandbox) {
 
 }
 
-// padrao
 $conteudo = "none";
 $modal = "block";
 
@@ -66,21 +65,30 @@ if(!empty($_GET["qq"])){
 	// close cUrl
 	curl_close($cUrl);
 
-	
+	// $resultado = json_decode($result, true);
+
+	// echo "RESULT:";
+	// echo $result;
+	// echo "<br>";
+
 	// result
 	if ($result != "error") {
 		// continua na página
 		$resultado = json_decode($result, true);
+		// formata a data de nascimento para como desejar
+		$dateFormatado = date_create($resultado['dataNascimentoCliente']);
+		$resultado['dataNascimentoCliente'] = date_format($dateFormatado, 'd/m/Y');
+		$resultado['codlicense'] = $codLicense;
+
+		// echo "<br>RESULTADO:";
+		// print_r($resultado);
 		// exibe
 		$conteudo = "block";
 		$modal = "none";
 	}else{
-		//header("Location: ops.html");
-		// se der erro, colocar para exibir um modal na tela, informando q nao achou os dados..
-		echo "erro config";
+		// echo "erro config";
 		// nao exibe
 		$conteudo = "none";
 		$modal = "block";
 	}
-	
 }
