@@ -12,7 +12,7 @@
 </p>
 
 <p>
-    O <b>Payment Central</b> é um sistema para gerenciamento do pagamento dos clientes da <a href="https://getteli.github.io/Publikando/" target="_blank">agencia publikando</a> onde ela gerencia pelo sistema <a href="https://getteli.github.io/Central/" target="_blank">Central</a>. os clientes recebem pelo seu email um informe para realizar o pagamento da mensalidade. Este email contem um link que leva para o pagamento neste site. Nele o cliente tem as informações do serviço contratado, valores, datas e tudo mais. Ele só precisa preencher os dados de pagamento ou gerar o boleto.
+    O <b>Payment Central</b> é um sistema para gerenciamento do pagamento dos clientes da <a href="https://getteli.github.io/Publikando/" target="_blank">agencia publikando</a> onde ela gerencia pelo sistema <a href="https://github.com/Getteli/Central" target="_blank">Central</a>. os clientes recebem pelo seu email um informe para realizar o pagamento da mensalidade. Este email contem um link que leva para o pagamento neste site. Nele o cliente tem as informações do serviço contratado, valores, datas e tudo mais. Ele só precisa preencher os dados de pagamento ou gerar o boleto.
 </p>
 
 ## Tecnologias usadas:
